@@ -1,0 +1,157 @@
+@import "_null.scss";
+@import "_fonts.scss";
+
+@keyframes shake {
+    from {
+        transform: rotate(10deg);
+    }
+    to {
+        transform-origin: center center;
+        transform: rotate(-10deg);
+    }
+}
+// @extend %red-border;
+
+body {
+    position: relative;
+}
+
+// media
+@media screen and (max-width: 1024px) {
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    // .header {
+    //     position: relative;
+    //     width: 100%;
+    //     &::before {
+    //         content: "";
+    //         transform: scale(0.5);
+    //         transform-origin: top right;
+    //         right: 0px;
+    //         top: 0px;
+    //         z-index: -1;
+    //     }
+    //     &__box {
+    //         position: fixed;
+    //         top: 0;
+    //         left: 0;
+    //         right: 0;
+    //         margin-left: auto;
+    //         margin-right: auto;
+    //         height: 65px;
+    //         width: 329px;
+
+    //         display: flex;
+    //         flex-direction: row;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         z-index: 50;
+    //         &::before {
+    //             content: "";
+    //             position: fixed;
+    //             left: 0;
+    //             top: 0;
+    //             height: 65px;
+    //             width: 100%;
+    //             background-color: #fbd34b;
+
+    //             opacity: 0.75;
+    //         }
+    //     }
+    //     &__logo {
+    //         position: relative;
+    //         z-index: 50;
+    //     }
+    //     &__burger {
+    //         display: block;
+    //         margin-left: auto;
+    //         position: relative;
+    //         width: 48px;
+    //         height: 48px;
+    //         border-radius: 50%;
+    //         background: #f07566;
+    //         z-index: 50;
+    //         & span {
+    //             position: absolute;
+    //             background: #fff;
+    //             border-radius: 2px;
+    //             left: 13px;
+    //             top: 23px;
+    //             width: 22px;
+    //             height: 2px;
+    //             transition: all 0.3s ease 0s;
+    //         }
+    //         &::before,
+    //         &::after {
+    //             content: "";
+    //             position: absolute;
+    //             background: #fff;
+    //             border-radius: 2px;
+    //             left: 13px;
+    //             width: 22px;
+    //             height: 2px;
+    //             transition: all 0.3s ease 0s;
+    //         }
+    //         &:before {
+    //             top: 15px;
+    //         }
+    //         &:after {
+    //             bottom: 15px;
+    //         }
+    //         &.active span {
+    //             transform: scale(0);
+    //         }
+    //         &.active:before {
+    //             transform: rotate(45deg);
+    //             top: 23px;
+    //         }
+    //         &.active:after {
+    //             transform: rotate(-45deg);
+    //             bottom: 23px;
+    //         }
+    //     }
+    // }
+    // .header .empty-button {
+    //     display: none;
+    // }
+
+    // .header-menu {
+    //     position: fixed;
+    //     top: -100%;
+    //     left: 0;
+    //     width: 100%;
+    //     height: auto;
+    //     overflow: auto;
+    //     transition: all 0.3s ease 0s;
+    //     background-color: #d8d8d8;
+    //     background-color: #fbd34b;
+    //     border-radius: 0 0 16px 16px;
+    //     margin: 0 0;
+    //     padding: 70px 23px 0 23px;
+    //     &__list {
+    //     }
+    //     &__item {
+    //         margin-bottom: 15px;
+    //         text-align: center;
+    //         width: 100%;
+    //         border-radius: 16px;
+    //         background-color: #f07566;
+    //     }
+    //     &__link {
+    //         font-weight: bold;
+    //         color: #fff;
+    //     }
+    // }
+    // .header-menu.active {
+    //     z-index: 1;
+    //     top: 0;
+    // }
+
+    // .header-menu__list {
+    //     display: block;
+    // }
+}
+
+@media screen and (min-device-width: 480px) and (hover: hover) {
+}
