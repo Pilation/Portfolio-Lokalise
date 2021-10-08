@@ -150,28 +150,21 @@ body {
   position: relative;
 }
 
-p,
-h1,
-h2,
-h3,
-span {
-  display: block;
-}
-
-.header__box, .accelerate__box, .companies__box, .perks__box, .use-cases__box, .boost__box, .quote__box, .awards__box, .integrate__box, .why-wait__box, .footer-navigation__box {
+.header__box, .accelerate__box, .companies__box, .perks__box, .use-cases__box, .boost__box, .quote__box, .awards__box, .integrate__box, .why-wait__box, .footer__box {
   margin: 0 auto;
-  max-width: 1340px;
+  max-width: 1290px;
 }
 
-.header, .header__box, .header-menu__item, .accelerate, .accelerate__box, .accelerate__text, .accelerate__picture, .companies, .companies__item, .perks, .use-cases, .use-cases__item, .boost, .boost__item, .quote, .awards, .integrate {
+.header, .header__box, .header-menu__item, .accelerate, .accelerate__box, .accelerate__text, .accelerate__picture, .companies, .companies__item, .perks, .use-cases, .use-cases__item, .boost, .boost__item, .quote, .quote__company, .awards, .awards__text, .awards__link, .integrate {
   border: 1px solid red;
+  border: none;
 }
 
 .companies__title, .perks__title, .use-cases__title, .boost__title, .integrate__title {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 50px;
+  font-size: calc(22px + 28 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -179,7 +172,7 @@ span {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: calc(25px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -187,7 +180,7 @@ span {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -206,7 +199,7 @@ span {
 }
 
 .header__logo {
-  height: 28px;
+  display: block;
 }
 
 .header__buttons {
@@ -214,9 +207,13 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .header__burger {
@@ -258,12 +255,10 @@ span {
 }
 
 .button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   display: block;
   height: 50px;
-  padding: 0 29px;
+  padding: 0 20px;
+  min-width: 120px;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
@@ -305,29 +300,25 @@ span {
 }
 
 .accelerate__text {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1;
-          flex: 1 1;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  width: 54%;
 }
 
 .accelerate__title {
-  max-width: 550px;
+  width: 100%;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 65px;
+  font-size: calc(25px + 40 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
 .accelerate__description {
   padding-top: 50px;
-  max-width: 470px;
+  width: 60%;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -350,8 +341,8 @@ span {
 }
 
 .accelerate__small-description {
+  display: block;
   padding-top: 25px;
-  max-width: 370px;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 400;
@@ -360,12 +351,7 @@ span {
 }
 
 .accelerate__picture {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0;
-          flex: 1 0;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  width: 56%;
 }
 
 .accelerate__picture img {
@@ -407,6 +393,7 @@ span {
 
 .companies__title {
   max-width: 720px;
+  width: 55%;
   text-align: center;
 }
 
@@ -415,10 +402,10 @@ span {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (fit-content(150px))[6];
-      grid-template-columns: repeat(6, fit-content(150px));
-  -ms-grid-rows: 55px;
-      grid-template-rows: 55px;
+  -ms-grid-columns: (fit-content(12%))[6];
+      grid-template-columns: repeat(6, fit-content(12%));
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -432,6 +419,11 @@ span {
   height: auto;
 }
 
+.companies__link {
+  width: auto;
+  display: block;
+}
+
 .perks {
   margin-top: 90px;
 }
@@ -439,8 +431,8 @@ span {
 .perks__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 632px))[2];
-      grid-template-columns: repeat(2, minmax(300px, 632px));
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
   -ms-grid-rows: (1fr)[4];
       grid-template-rows: repeat(4, 1fr);
   row-gap: 250px;
@@ -450,18 +442,15 @@ span {
 }
 
 .perks__info {
-  max-width: 495px;
+  width: 75%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.perks__info:nth-child(even) {
-  padding-left: 140px;
-}
-
-.perks__info:nth-child(odd) {
-  padding-right: 140px;
+.perks__info:nth-child(4n) {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .perks__description {
@@ -469,7 +458,7 @@ span {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -479,7 +468,7 @@ span {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
   color: #000;
 }
@@ -529,25 +518,25 @@ span {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .use-cases__title {
-  text-align: center;
+  width: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .use-cases__list {
   padding-top: 60px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 330px))[3];
-      grid-template-columns: repeat(3, minmax(300px, 330px));
+  -ms-grid-columns: (25%)[3];
+      grid-template-columns: repeat(3, 25%);
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
-  -webkit-column-gap: 100px;
-          column-gap: 100px;
+  -webkit-column-gap: 12.5%;
+          column-gap: 12.5%;
   row-gap: 50px;
 }
 
@@ -569,10 +558,11 @@ span {
 }
 
 .use-cases__icon {
-  width: 160px;
-  height: 120px;
+  width: 55%;
+  height: 0px;
+  padding-bottom: 41%;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 100% 100%;
 }
 
 .use-cases__icon_web-apps {
@@ -600,13 +590,13 @@ span {
 }
 
 .use-cases__small-title {
-  max-width: 140px;
+  width: 40%;
   padding-top: 26px;
   text-align: center;
 }
 
 .use-cases__description {
-  max-width: 330px;
+  width: 95%;
   padding-top: 20px;
   text-align: center;
 }
@@ -630,7 +620,6 @@ span {
       -ms-grid-row-align: center;
       align-self: center;
   text-align: center;
-  max-width: 1290px;
 }
 
 .boost__list {
@@ -651,7 +640,7 @@ span {
 }
 
 .boost__item {
-  max-width: 410px;
+  width: 30%;
   padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -669,10 +658,12 @@ span {
 }
 
 .boost__icon {
-  width: 180px;
-  height: 200px;
+  width: 47%;
+  height: 0px;
+  padding-bottom: 52%;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 100% 100%;
+  background-position: top left;
 }
 
 .boost__icon_managers {
@@ -702,8 +693,9 @@ span {
 }
 
 .quote {
+  margin-top: 180px;
   background-color: #c9e8f2;
-  border-radius: 0 100px 100px 0;
+  border-radius: 0 100px 0 0;
   -webkit-transform: translate(-95%, 0);
           transform: translate(-95%, 0);
   -webkit-transition: all 0.75s ease;
@@ -734,14 +726,14 @@ span {
 }
 
 .quote__text {
-  max-width: 895px;
+  width: 70%;
 }
 
 .quote__description {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
-  font-size: 30px;
+  font-size: calc(25px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
@@ -756,7 +748,10 @@ span {
 
 .quote__company {
   margin-top: 10px;
-  max-width: 110px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
 }
 
 .quote__company img {
@@ -765,18 +760,19 @@ span {
 }
 
 .quote__photo {
-  max-width: 310px;
-  max-height: 310px;
+  width: 24%;
+  height: 0px;
+  padding-bottom: 24%;
 }
 
 .quote__photo img {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
 .awards {
   background-color: #dabc98;
-  border-radius: 0 100px 100px 0;
+  border-radius: 0 0 100px 0;
   -webkit-transform: translate(-95%, 0);
           transform: translate(-95%, 0);
   -webkit-transition: all 0.75s ease 0.2s;
@@ -797,53 +793,17 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .awards__text {
-  width: 700px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.awards__icon {
-  width: 175px;
-  height: 155px;
-  background-image: url(../img/Icons/Cake.svg);
-  background-repeat: no-repeat;
-  background-size: 175px auto;
-}
-
-.awards__title {
-  max-width: 465px;
-  font-family: "Graphik LCG";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 35px;
-  line-height: 50px;
-}
-
-.awards__links {
-  max-width: 480px;
-  border-left: 1px solid #000;
+  width: 65%;
+  border-right: 1px solid #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -857,17 +817,62 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.awards__icon {
+  width: 22%;
+  height: 0px;
+  padding-bottom: 20%;
+  background-image: url(../img/Icons/Cake.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.awards__title {
+  margin-left: 8%;
+  width: 57%;
+  font-family: "Graphik LCG";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 50px;
+}
+
+.awards__links {
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .awards__link {
-  min-width: 150px;
-  margin-left: 70px;
   display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-left: 13.5%;
+  color: #000;
+  font-family: "Graphik LCG";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
+
+.awards__link span {
+  display: block;
+  margin-top: 5px;
 }
 
 .integrate__box {
@@ -888,21 +893,23 @@ span {
 }
 
 .integrate__title {
-  max-width: 795px;
+  text-align: center;
+  width: 60%;
 }
 
 .integrate__description {
+  width: 40%;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
-  font-size: 25px;
+  font-size: calc(20px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: 30px;
   text-align: center;
 }
 
 .integrate__illustration {
-  max-width: 1023px;
-  max-height: 445px;
+  width: 80%;
+  height: auto;
   margin: 30px 0;
 }
 
@@ -914,7 +921,7 @@ span {
 .why-wait {
   margin-top: 160px;
   background-color: #ff9c7d;
-  border-radius: 0 100px 100px 0;
+  border-radius: 0 100px 0 0;
   -webkit-transform: translate(-95%, 0);
           transform: translate(-95%, 0);
   -webkit-transition: all 0.75s ease;
@@ -947,7 +954,7 @@ span {
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 65px;
+  font-size: calc(25px + 40 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
   text-align: center;
   max-width: 785px;
@@ -964,7 +971,7 @@ span {
 }
 
 .footer-navigation__box {
-  padding: 95px 0 45px 0;
+  padding: 7% 0 4% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -980,32 +987,25 @@ span {
           align-items: flex-start;
 }
 
+.footer-navigation__menu {
+  width: 14%;
+}
+
 .footer-navigation__title {
+  display: block;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
 }
 
 .footer-navigation__list {
   padding-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .footer-navigation__item {
+  display: block;
   padding-top: 15px;
 }
 
@@ -1023,19 +1023,7 @@ span {
 }
 
 .case-studies {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  width: 23%;
 }
 
 .case-studies__title {
@@ -1047,21 +1035,24 @@ span {
 }
 
 .case-studies__illustration {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   margin-top: 30px;
 }
 
 .case-studies__logo {
+  display: block;
+  width: 27%;
   margin-top: 30px;
 }
 
 .case-studies__logo img {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
 .case-studies__description {
+  padding-top: 24px;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: normal;
@@ -1072,13 +1063,76 @@ span {
 }
 
 .case-studies__link {
+  margin-top: 15px;
+  display: block;
   font-family: "Graphik LCG";
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
   line-height: normal;
-  padding-top: 15px;
   color: #000;
+}
+
+.copyright__box {
+  padding: 48px 0;
+  border-top: 1px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.copyright__logo {
+  display: block;
+  width: 7%;
+}
+
+.copyright__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.copyright__description {
+  margin-left: 15px;
+  font-family: "Graphik LCG";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.copyright__years-reserved {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.copyright__years-reserved span {
+  display: block;
+  font-family: "Graphik LCG";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@media screen and (min-device-width: 375px) and (max-width: 1439px) {
+  section,
+  header,
+  footer {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 @media screen and (min-device-width: 320px) and (max-width: 1024px) {

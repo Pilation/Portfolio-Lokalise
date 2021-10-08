@@ -21,8 +21,14 @@ h1,
 h2,
 h3,
 span {
-    // display: block;
+    display: block;
 }
+
+%desctop-block {
+    margin: 0 auto;
+    max-width: 1340px;
+}
+// @extend %desctop-block;
 
 $gr: "Graphik LCG";
 // $fh1: calc(25px + 40 * ((100vw - 420px) / (1440 - 420)));
@@ -31,31 +37,14 @@ $gr: "Graphik LCG";
 // $fp25: calc(20px + 5 * ((100vw - 420px) / (1440 - 420)));
 // $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
-$fh1: calc(25px + 40 * ((100vw - 420px) / (1440 - 420)));
-$fh2: calc(22px + 28 * ((100vw - 420px) / (1440 - 420)));
-$fh3: calc(25px + 5 * ((100vw - 420px) / (1440 - 420)));
-$fp25: calc(20px + 5 * ((100vw - 420px) / (1440 - 420)));
-$fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
-
-// $fh1: 65px;
-// $fh2: 50px;
-// $fh3: 30px;
-// $fp25: 25px;
-// $fp20: 20px;
-
-// Общая ширина 1440px
-// Контейнеры 1290px
-
-%desctop-block {
-    margin: 0 auto;
-    // max-width: 1340px;
-    max-width: 1290px;
-}
-// @extend %desctop-block;
+$fh1: 65px;
+$fh2: 50px;
+$fh3: 30px;
+$fp25: 25px;
+$fp20: 20px;
 
 %rbr {
     border: 1px solid red;
-    border: none;
 }
 
 %h2 {
@@ -103,13 +92,13 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         align-items: center;
     }
     &__logo {
-        display: block;
+        // width: 130px;
+        height: 28px;
     }
     &__buttons {
         margin-left: auto;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
     &__burger {
         display: none;
@@ -142,11 +131,10 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 .button {
-    // width: fit-content;
+    width: fit-content;
     display: block;
     height: 50px;
-    padding: 0 20px;
-    min-width: 120px;
+    padding: 0 29px;
     font-family: $gr;
     font-style: normal;
     font-weight: 600;
@@ -176,20 +164,24 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     &__box {
         @extend %rbr;
         @extend %desctop-block;
+        // display: grid;
         padding-top: 130px;
+        // grid-template-columns: auto 1fr;
+        // grid-template-rows: fit-content(600px);
+        // gap: 26px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
     &__text {
-        width: 54%;
+        flex: 1 1;
         @extend %rbr;
+        align-self: flex-start;
     }
 
     &__title {
-        // max-width: 550px;
-        width: 100%;
+        max-width: 550px;
         font-family: $gr;
         font-style: normal;
         font-weight: 600;
@@ -199,7 +191,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__description {
         padding-top: 50px;
-        width: 60%;
+        max-width: 470px;
         font-family: $gr;
         font-style: normal;
         font-weight: normal;
@@ -218,8 +210,8 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__small-description {
-        display: block;
         padding-top: 25px;
+        max-width: 370px;
         font-family: $gr;
         font-style: normal;
         font-weight: 400;
@@ -228,10 +220,9 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__picture {
-        // flex: 1 0;
-        width: 56%;
+        flex: 1 0;
         @extend %rbr;
-        // align-self: center;
+        align-self: center;
         & img {
             // max-width: 760px;
             width: 100%;
@@ -240,7 +231,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 
-//todo Companies (animation)
+//todo Companies
 
 .companies {
     @extend %rbr;
@@ -264,7 +255,6 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__title {
         max-width: 720px;
-        width: 55%;
         @extend %h2;
         text-align: center;
     }
@@ -273,8 +263,8 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         padding-top: 70px;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(6, fit-content(12%));
-        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, fit-content(150px));
+        grid-template-rows: 55px;
         align-items: center;
         justify-content: space-between;
     }
@@ -288,8 +278,6 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__link {
-        width: auto;
-        display: block;
     }
 }
 
@@ -299,20 +287,29 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     margin-top: 90px;
     &__box {
         @extend %desctop-block;
+        // display: grid;
+        // grid-template-columns: repeat(2, minmax(300px, 632px));
+        // grid-template-rows: repeat(4, auto);
+        // align-items: center;
+        // justify-content: space-between;
     }
     &__list {
         display: grid;
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(2, minmax(300px, 632px));
         grid-template-rows: repeat(4, 1fr);
         row-gap: 250px;
+        // align-items: center;
         justify-content: space-between;
     }
 
     &__info {
-        width: 75%;
+        max-width: 495px;
         align-self: center;
-        &:nth-child(4n) {
-            justify-self: center;
+        &:nth-child(even) {
+            padding-left: 140px;
+        }
+        &:nth-child(odd) {
+            padding-right: 140px;
         }
     }
 
@@ -341,12 +338,19 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__picture {
+        // margin: 125px 0;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+
         & img {
             width: 100%;
             height: auto;
         }
     }
     &__picture_non-gif {
+        // height: 100%;
+        // max-height: 632px;
         background-color: #fff8e4;
         display: flex;
         justify-content: center;
@@ -354,9 +358,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 
-//todo Use cases (animation)
-// width 335px, padding 13 13
-// width 160px, height 120px
+//todo Use cases
 
 .use-cases {
     @extend %rbr;
@@ -375,21 +377,20 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: center;
     }
 
     &__title {
-        width: 70%;
         @extend %h2;
-        align-self: center;
+        text-align: center;
     }
 
     &__list {
         padding-top: 60px;
         display: grid;
-        grid-template-columns: repeat(3, 25%);
+        grid-template-columns: repeat(3, minmax(300px, 330px));
         grid-template-rows: repeat(2, 1fr);
-
-        column-gap: 12.5%;
+        column-gap: 100px;
         row-gap: 50px;
     }
 
@@ -403,12 +404,10 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__icon {
-        width: 55%;
-        height: 0px;
-        padding-bottom: 41%;
+        width: 160px;
+        height: 120px;
         background-repeat: no-repeat;
-        // background-size: cover;
-        background-size: 100% 100%;
+        background-size: auto;
         &_web-apps {
             background-image: url(../img/Icons/Web-apps.svg);
         }
@@ -434,14 +433,14 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__small-title {
-        width: 40%;
+        max-width: 140px;
         padding-top: 26px;
         @extend %h3;
         text-align: center;
     }
 
     &__description {
-        width: 95%;
+        max-width: 330px;
         padding-top: 20px;
         @extend %p20;
         text-align: center;
@@ -466,6 +465,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         @extend %h2;
         align-self: center;
         text-align: center;
+        max-width: 1290px;
     }
 
     &__list {
@@ -478,7 +478,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__item {
         @extend %rbr;
-        width: 30%;
+        max-width: 410px;
         padding-top: 50px;
         display: flex;
         flex-direction: column;
@@ -487,12 +487,10 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__icon {
-        width: 47%;
-        height: 0px;
-        padding-bottom: 52%;
+        width: 180px;
+        height: 200px;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-position: top left;
+        background-size: auto;
 
         &_managers {
             background-image: url(../img/Icons/Managers.svg);
@@ -526,13 +524,12 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 
-//todo quote (animation)
+//todo quote
 
 .quote {
     @extend %rbr;
-    margin-top: 180px;
     background-color: #c9e8f2;
-    border-radius: 0 100px 0 0;
+    border-radius: 0 100px 100px 0;
     transform: translate(-95%, 0);
     transition: all 0.75s ease;
     &.anim-scroll-active {
@@ -550,7 +547,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__text {
-        width: 70%;
+        max-width: 895px;
     }
 
     &__description {
@@ -572,9 +569,7 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__company {
         margin-top: 10px;
-        width: fit-content;
-        @extend %rbr;
-        display: block;
+        max-width: 110px;
         & img {
             width: auto;
             height: auto;
@@ -582,22 +577,21 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__photo {
-        width: 24%;
-        height: 0px;
-        padding-bottom: 24%;
+        max-width: 310px;
+        max-height: 310px;
         & img {
-            width: 100%;
+            width: auto;
             height: auto;
         }
     }
 }
 
-//todo awards (animation)
+//todo awards
 
 .awards {
     @extend %rbr;
     background-color: #dabc98;
-    border-radius: 0 0 100px 0;
+    border-radius: 0 100px 100px 0;
     transform: translate(-95%, 0);
     transition: all 0.75s ease 0.2s;
     &.anim-scroll-active {
@@ -609,33 +603,29 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         padding: 90px 0;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
     }
 
     &__text {
-        @extend %rbr;
-        width: 65%;
-        border-right: 1px solid #000;
+        width: 700px;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__icon {
-        width: 22%;
-        height: 0px;
-        padding-bottom: 20%;
+        width: 175px;
+        height: 155px;
         background-image: url(../img/Icons/Cake.svg);
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 175px auto;
     }
 
     &__title {
-        margin-left: 8%;
-
-        width: 57%;
+        max-width: 465px;
         font-family: $gr;
         font-style: normal;
         font-weight: 600;
@@ -644,30 +634,20 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__links {
-        width: 35%;
+        max-width: 480px;
+        border-left: 1px solid #000;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        flex-wrap: wrap;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     &__link {
-        @extend %rbr;
+        min-width: 150px;
+        margin-left: 70px;
         display: block;
-        margin-left: 13.5%;
-        color: #000;
-        font-family: $gr;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 25px;
-        letter-spacing: 0.75px;
-        text-transform: uppercase;
-        & span {
-            display: block;
-            margin-top: 5px;
-        }
+        width: fit-content;
     }
 }
 
@@ -686,12 +666,10 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__title {
         @extend %h2;
-        text-align: center;
-        width: 60%;
+        max-width: 795px;
     }
 
     &__description {
-        width: 40%;
         font-family: $gr;
         font-style: normal;
         font-weight: normal;
@@ -701,8 +679,8 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__illustration {
-        width: 80%;
-        height: auto;
+        max-width: 1023px;
+        max-height: 445px;
         margin: 30px 0;
         & img {
             width: 100%;
@@ -711,12 +689,12 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 
-//todo Why wait (animation)
+//todo Why wait
 
 .why-wait {
     margin-top: 160px;
     background-color: #ff9c7d;
-    border-radius: 0 100px 0 0;
+    border-radius: 0 100px 100px 0;
     transform: translate(-95%, 0);
     transition: all 0.75s ease;
     &.anim-scroll-active {
@@ -755,12 +733,12 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 .footer {
     background-color: #eeeeee;
     &__box {
-        @extend %desctop-block;
     }
 }
 .footer-navigation {
     &__box {
-        padding: 7% 0 4% 0;
+        @extend %desctop-block;
+        padding: 95px 0 45px 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -768,11 +746,9 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 
     &__menu {
-        width: 14%;
     }
 
     &__title {
-        display: block;
         font-family: $gr;
         font-style: normal;
         font-weight: 600;
@@ -782,10 +758,13 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
     &__list {
         padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     &__item {
-        display: block;
         padding-top: 15px;
         &:first-child {
             padding-top: 0px;
@@ -802,7 +781,10 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
     }
 }
 .case-studies {
-    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     &__title {
         font-family: $gr;
         font-style: normal;
@@ -810,22 +792,22 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         font-size: 40px;
         line-height: 50px;
     }
+
     &__illustration {
-        width: 100%;
-        height: auto;
+        width: 300px;
+        height: 300px;
         margin-top: 30px;
     }
+
     &__logo {
-        display: block;
-        width: 27%;
         margin-top: 30px;
         & img {
-            width: 100%;
+            width: auto;
             height: auto;
         }
     }
+
     &__description {
-        padding-top: 24px;
         font-family: $gr;
         font-style: normal;
         font-weight: normal;
@@ -834,72 +816,32 @@ $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
         padding-top: 10px;
         max-width: 290px;
     }
+
     &__link {
-        margin-top: 15px;
-        display: block;
         font-family: $gr;
         font-style: normal;
         font-weight: 600;
         font-size: $fp20;
         line-height: normal;
+        padding-top: 15px;
         color: #000;
     }
 }
 .copyright {
     &__box {
-        padding: 48px 0;
-        border-top: 1px solid #000;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
     }
 
     &__logo {
-        display: block;
-        width: 7%;
-        & img {
-            width: 100%;
-            height: auto;
-        }
     }
 
     &__description {
-        margin-left: 15px;
-        font-family: $gr;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 15px;
     }
 
-    &__years-reserved {
-        margin-left: auto;
-        margin-right: 5%;
-        & span {
-            display: block;
-            font-family: $gr;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 15px;
-        }
+    &__reserved {
     }
 }
 
 // media
-@media screen and (min-device-width: 375px) and (max-width: 1439px) {
-    // .wrapper {
-    //     padding: 0 75px;
-    // }
-    section,
-    header,
-    footer {
-        box-sizing: content-box;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-}
 @media screen and (min-device-width: 420px) and (max-width: 1408px) {
     .wrapper {
         // padding: 0 35px;
