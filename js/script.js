@@ -1,14 +1,18 @@
 $(document).ready(function () {
     $('.header__burger').click(function (event) {
-        $('.header__burger,.header-menu').toggleClass('active');
+        $('.header__burger,.header-menu,.wrapper').toggleClass('active');
+        // $('.header-menu__link').toggleClass('button button_orange')
         $('body').toggleClass('lock');
     });
 
-    $('a[href^="#link"]').each(function () {
-        var oldUrl = $(this).attr("href"); // Get current url
-        var newUrl = oldUrl.replace("#link"); // Create new url
-        $(this).attr("href", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"); // Set herf value
-    });
+
+
+
+    // $('a[href^="#link"]').each(function () {
+    //     var oldUrl = $(this).attr("href"); // Get current url
+    //     var newUrl = oldUrl.replace("#link"); // Create new url
+    //     $(this).attr("href", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"); // Set herf value
+    // });
 });
 
 var btn = $('.go-top-button');
