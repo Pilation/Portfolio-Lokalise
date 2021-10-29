@@ -1225,6 +1225,9 @@ footer {
 }
 
 @media screen and (min-device-width: 1440px) {
+  .wrapper {
+    width: 1440px;
+  }
   .accelerate__title {
     font-size: 65px;
   }

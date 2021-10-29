@@ -896,6 +896,9 @@ footer {
 
 //todo media
 @media screen and (min-device-width: 1440px) {
+    .wrapper {
+        width: 1440px;
+    }
     //todo Accelerate
 
     .accelerate {
