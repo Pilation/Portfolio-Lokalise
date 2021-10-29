@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   border: 0;
+  background: none;
 }
 
 *,
@@ -211,6 +212,32 @@ li {
   }
 }
 
+@-webkit-keyframes foursquare {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 160%;
+    height: 160%;
+    opacity: 0;
+  }
+}
+
+@keyframes foursquare {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 160%;
+    height: 160%;
+    opacity: 0;
+  }
+}
+
 section,
 header,
 footer {
@@ -223,6 +250,43 @@ footer {
 .wrapper {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+.go-top-button {
+  position: fixed;
+  display: block;
+  bottom: 40px;
+  right: 25px;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  background-color: #ff6336;
+  border-radius: 5px;
+  line-height: 40px;
+  width: 40px;
+  text-align: center;
+  font-family: "Graphik LCG";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.go-top-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ff6336;
+  z-index: -1;
+  border-radius: 5px;
+  -webkit-animation: foursquare 2s infinite;
+          animation: foursquare 2s infinite;
 }
 
 .header__box {
@@ -1246,7 +1310,6 @@ footer {
     position: relative;
     width: 40px;
     height: 30px;
-    border-radius: 50%;
     z-index: 50;
   }
   .header__burger span {
@@ -1264,6 +1327,7 @@ footer {
     position: absolute;
     background: #ff6336;
     border-radius: 2px;
+    left: 0;
     width: 100%;
     height: 4px;
     -webkit-transition: all 0.3s ease 0s;
@@ -2012,5 +2076,15 @@ footer {
   .case-studies__link:hover::before,
   .case-studies__link:focus::before {
     width: 100%;
+  }
+  .go-top-button:hover {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .go-top-button:hover::before {
+    -webkit-animation: none;
+            animation: none;
+    display: none;
   }
 }

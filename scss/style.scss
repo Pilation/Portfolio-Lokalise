@@ -75,6 +75,20 @@ $orange: #ff6336;
     }
 }
 
+@keyframes foursquare {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 160%;
+        height: 160%;
+        opacity: 0;
+    }
+}
+
 // @extend %h2;
 
 section,
@@ -87,6 +101,44 @@ footer {
 
 .wrapper {
     transition: all 1s ease;
+}
+
+//todo Go to Top button
+.go-top-button {
+    position: fixed;
+    display: block;
+    bottom: 40px;
+    right: 25px;
+    z-index: 50;
+
+    width: 40px;
+    height: 40px;
+    background-color: $orange;
+    border-radius: 5px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    font-family: $gr;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: #fff;
+    opacity: 0.5;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 5px solid $orange;
+        z-index: -1;
+        border-radius: 5px;
+        // transform-origin: center;
+        animation: foursquare 2s infinite;
+    }
 }
 
 //todo Header
@@ -979,7 +1031,6 @@ footer {
             position: relative;
             width: 40px;
             height: 30px;
-            border-radius: 50%;
             z-index: 50;
             & span {
                 position: absolute;
@@ -996,7 +1047,7 @@ footer {
                 position: absolute;
                 background: #ff6336;
                 border-radius: 2px;
-                // left: 13px;
+                left: 0;
                 width: 100%;
                 height: 4px;
                 transition: all 0.3s ease 0s;
@@ -1721,5 +1772,16 @@ footer {
     .case-studies__link:hover::before,
     .case-studies__link:focus::before {
         width: 100%;
+    }
+
+    .go-top-button {
+        &:hover {
+            opacity: 1;
+            transform: scale(1.2);
+            &::before {
+                animation: none;
+                display: none;
+            }
+        }
     }
 }
