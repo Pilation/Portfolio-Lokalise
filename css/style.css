@@ -1225,9 +1225,6 @@ footer {
 }
 
 @media screen and (min-device-width: 1440px) {
-  .wrapper {
-    width: 1440px;
-  }
   .accelerate__title {
     font-size: 65px;
   }
@@ -1290,6 +1287,50 @@ footer {
   }
   .case-studies__link {
     font-size: 20px;
+  }
+  .header__box {
+    width: 1340px;
+    margin: 0 auto;
+  }
+  .accelerate__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .companies__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .perks__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .use-cases__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .boost__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .quote__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .awards__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .integrate__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .why-wait__box {
+    width: 1290px;
+    margin: 0 auto;
+  }
+  .footer__box {
+    width: 1290px;
+    margin: 0 auto;
   }
 }
 

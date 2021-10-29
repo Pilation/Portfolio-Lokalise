@@ -896,9 +896,6 @@ footer {
 
 //todo media
 @media screen and (min-device-width: 1440px) {
-    .wrapper {
-        width: 1440px;
-    }
     //todo Accelerate
 
     .accelerate {
@@ -1012,6 +1009,104 @@ footer {
             font-size: 20px;
         }
     }
+
+    //! width
+    //todo Header
+    .header {
+        &__box {
+            width: 1340px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Accelerate
+    .accelerate {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Companies (animation)
+    .companies {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Perks
+    .perks {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Use cases (animation)
+    .use-cases {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo boost
+    .boost {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo quote (animation)
+    .quote {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo awards (animation)
+    .awards {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Integrate
+    .integrate {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Why wait (animation)
+    .why-wait {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+
+    //todo Footer
+
+    .footer {
+        &__box {
+            width: 1290px;
+            margin: 0 auto;
+        }
+    }
+    // .footer-navigation {
+    //     &__box {
+    //     }
+    // }
+    // .copyright {
+    //     &__box {
+    //     }
+    // }
 }
 @media screen and (min-device-width: 320px) and (max-width: 1024px) {
     .wrapper {
